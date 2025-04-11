@@ -13,29 +13,72 @@ console.log('Hola soy tu consola y juntas vamos a aprender Javascript')
 const age = 18
 //Escribe tu código aquí
 
+if(age < 18){
+    console.log('You are not yet of legal age');
+} else {
+    console.log('You are of legal age');
+}
 
 //Ejercicio 2: Cambia el valor de age a 12 para mirar el resultado del ejercicio anterior.
+const age12 = 12;
 
+if(age12 < 18){
+    console.log('You are not yet of legal age');
+} else {
+    console.log('You are of legal age');
+}
 
 //Ejercicio 3: Escribe un condicional if/else que lea la constante pet y si es un perro, que imprima en la consola "Tengo un perro", si es un gato, que imprima en la consola "Tengo un gato", si es un pájaro, que imprima en la consola "Tengo un pájaro" y si no es ninguno de los 3 que imprima "No tengo una mascota convencional"
 
 const pet = "perro";
 //Escribe tu código aquí
 
+if(pet=="perro"){
+    console.log('Tengo un perro!');
+} else if(pet=="gato"){
+    console.log('Tengo un gato!');
+} else if(pet=="pájaro"){
+    console.log('Tengo un pájaro!');
+} else {
+    console.log('No tengo una mascota convencional.');
+}
 
 //Ejercicio 4: cambia el valor de pet a "serpiente" y mira el resultado en consola para comprobar que tu código funciona bien.
+const pet2 = "serpiente";
+//Escribe tu código aquí
 
+if(pet2=="perro"){
+    console.log('Tengo un perro!');
+} else if(pet=="gato"){
+    console.log('Tengo un gato!');
+} else if(pet=="pájaro"){
+    console.log('Tengo un pájaro!');
+} else {
+    console.log('No tengo una mascota convencional.');
+}
 
 //Ejercicio 5: Haz el mismo ejercicio 3, pero con el condicional switch.
 
 //Escribe tu código aquí
 
+switch(pet){ 
+    case "perro":
+        console.log('Tengo un perro!');
+        break;
+    case "gato":
+        console.log('Tengo un gato!');
+        break;
+    case "pájaro":
+        console.log('Tengo un pájaro!');
+    default:
+        onsole.log('No tengo una mascota convencional.');
+}
 
 //Ejercicio 6: Usando un operador ternario, escribe un programa que lea la constante weather e imprima en consola si es soleado "Me vestiré con un vestido" y si no es así que imprima "Me vestiré con pantalón"
 
 const weather = "soleado"
 
-const result = //Escribe tu código aquí;
+const result = (weather === "soleado") ? "Me vestiré con un vestido" : "Me vestiré con pantalón";
 
 console.log(result)
 
@@ -47,13 +90,22 @@ const value = '1'
 
 //Escribe tu código aquí
 
-
+if(typeof(value) == 'string'){
+    console.log('Es un string');
+} else if(typeof(value) == 'number'){
+    console.log('Es un número');
+} else {
+    console.log('No es ni número ni string');
+}
 //BUCLES
 
 //Ejercicio 9: Imprime en consola una lista del 0 al 10 con el bucle for
 
 //Escribe tu código aquí
 
+for(let index=0; index <= 10; index++){
+    console.log(index);
+}
 
 //Ejercicio 10: Con un bucle for in imprime en pantalla todos los nombres, apellidos y su aporte a la sociedad de las programadoras de la historia contenidas en el array llamado 'programmers', Deberás imprimir el índice y la información de cada una de ellas de la siguiente manera: '0: Ada Lovelace, su aporte fue la máquina analítica'. 
 
@@ -79,35 +131,61 @@ const programmers = [
         knowledge: 'el wifi'
     }     
 ]
-
 //Escribe tu código aquí
 
+for(let index=0; index < programmers.length; index++) {
+    console.log(index + ': ' + programmers[index].name + ' ' + programmers[index].lastname + ', ' + programmers[index].knowledge);
+}
 
 //Ejercicio 11: Con un bucle for of imprime en consola "Hola, mi nombre es ... " y reemplaza los tres puntos con cada nombre del array dado.
 
 const names = ['Carla', 'Alex', 'Judith', 'Maria', 'Noelia']
 
 //Escribe tu código aquí
-
+for(let index=0; index < names.length; index++) {
+    console.log('Hola, mi nombre es ' + names[index]);
+}
 
 //Ejercicio 12: Con un bucle while imprime en consola una lista del 1 al 5.
 
 //Escribe tu código aquí
+let number= 1;
 
+while (number <= 5) {
+  console.log(number);
+  number++;
+}
 
 //Ejercicio 13: Realiza el mismo ejercicio anterior pero con un bucle do while.
 
 //Escribe tu código aquí
-
+let number1= 1;
+do {
+    console.log(number1);
+    number1++;
+} while(number1 <= 5);
 
 //Ejercicio 14: Saludo Personalizado
 //Crea una función llamada saludar que tome un parámetro llamado nombre y devuelva un saludo personalizado. Luego, llama a la función con diferentes nombres y muestra el resultado en la consola.
 
 //Escribe tu código aquí
 
+function greeting(name){
+    return 'Hello, ' + name + '!';
+}
+
+console.log(greeting('Anna'));
+console.log(greeting('Petro'));
 
 //Ejercicio 15: Calcular el Área de un Rectángulo
 //Crea una función llamada calcularAreaRectangulo que tome dos parámetros (ancho y alto) y devuelva el área del rectángulo. Luego, llama a la función con diferentes valores de ancho y alto y muestra el resultado en la consola.
 
 //Escribe tu código aquí
 
+function calculateRectangleArea(width, height) {
+    return width * height;
+  }
+  
+  console.log(calculateRectangleArea(5, 10));
+  console.log(calculateRectangleArea(3, 7));
+  console.log(calculateRectangleArea(8, 2)); 
